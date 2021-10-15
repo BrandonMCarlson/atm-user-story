@@ -1,5 +1,7 @@
-//balance
+let balance = 1500; 
 
-let userPin = 1234;
+const userPin = 1234;
 
-module.export = 
+module.exports.pin = userPin;
+module.exports.userBalance = balance;
+console.log(module);
