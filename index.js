@@ -1,29 +1,33 @@
-const {theBal, lessBal, moreBal, thatPin, menu} = require("./atm"); 
+const atm = require("./atm"); 
+const prompt = require("prompt-sync")({sigint: true});
 
-const prompt = require("prompt-sync")();
-console.log("What is your pin?");
-const checkPin = prompt();
+// function run(){
+//     atm.newBal();
+//     atm.pinChecker();
+//     atm.atmwithdraw();
+//     atm.atmdeposit();
+//     }
+// run();
+const checkPin = prompt("What is your pin?")
+const userInput = prompt();
+if(!atm.pinChecker === userInput) {
+    console.log('Incorrect. try again please.');
+}else{
+    const mainMenu = prompt("Please choose from the following '1' for balance. '2' for a deposit. '3' for a withdrawal. You can type 'quit' when finished.");
+    switch(mainMenu) {
+        case "1":
+            console.log(`your current balance is: ${atm.newBal}`);
+            break;
+        case "2":
+            let userdeposit = prompt('what is the amount you would like to deposit.')
+            console.log(atm.atmdeposit(parseInt(userInput)));
+        case "3":
+            let userwithdraw = prompt('how much would you like to take out?')
+            console.log(atm.atmwithdraw(userInput));
+        case "exit":
 
-function pinChecker(userInput){
-    if(pinChecker === thatPin){
-        return true;
-    }else if(pinChecker != thatPin){
-        console.log("Please try again");
-        return pinChecker;
+        break;
     }
 }
 
 
-
-
-
-
-
-// const checkBalance = prompt("Would you like to see your current balance?");
-// function getBal(input){
-//     if (input === "yes");{
-//         console.log('The current balance is ${balance}');
-//     }else if (input === "no");{
-//         return menu;
-//     }
-// }

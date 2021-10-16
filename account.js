@@ -1,7 +1,6 @@
-const balance = 1500; 
+const balance = "1500"; 
 
-const userPin = 1234;
+const userPin = "1234";
 
-module.exports = {
-    pin:userPin, Userbal:balance
-}
+module.exports.pin = userPin;
+module.exports.uBal = balance;
