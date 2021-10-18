@@ -20,14 +20,21 @@ if(!atm.pinChecker === userInput) {
             break;
         case "2":
             let userdeposit = prompt('what is the amount you would like to deposit.')
-            console.log(atm.atmdeposit(parseInt(userInput)));
+            console.log(atm.newBal);
         case "3":
             let userwithdraw = prompt('how much would you like to take out?')
-            console.log(atm.atmwithdraw(userInput));
+            console.log(atm.newBal);
         case "exit":
 
         break;
     }
+    const reStart = prompt("Would you like to go back through your options? If so please enter yes. If you would like to quit, please enter no.")
+const uInput = prompt();
+if(uInput === "yes"){
+    return mainMenu;
+}else if(uInput === "no"){
+    console.log("Have a nice day.");
+}
 }
 
 
